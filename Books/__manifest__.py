@@ -15,6 +15,6 @@
     ],
     'data':[
         'views/books.xml',
-        'security/books.csv'
+        'security/ir.model.access.csv'
     ],
 }
