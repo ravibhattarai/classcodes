@@ -8,6 +8,11 @@
                 <form string="Books Application">
                     <sheet>
                         <group>
+                             <div class="oe_title">
+                        <h1>
+                            <field name="bookname"/>
+                        </h1>
+                         </div>
                             <group>
                                 <field name="bookname">Book Name </field>
                                 <field name="price"> Book Price</field>
