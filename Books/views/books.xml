@@ -1,32 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <record id="books_form_view" model="ir.ui.view">
-            <field name="name">books.form</field>
-            <field name="model">books</field>
-            <field name="arch" type="xml">
-                <form string="Books Application">
-                    <sheet>
+    <record>
+    <record id="books_view" model="ir.ui.view">
+        <field name="name">books.form</field>
+        <field name="model">books</field>
+        <field name="arch" type="xml">
+            <form string="Books Application">
+                <sheet>
+                    <group>
                         <group>
-                             <div class="oe_title">
-                        <h1>
-                            <field name="bookname"/>
-                        </h1>
-                         </div>
-                            <group>
-                                <field name="bookname">Book Name </field>
-                                <field name="price"> Book Price</field>
-                            </group>
-                            <group>
-                               <field name="ISBN"> Category</field>
-                                <field name="details"> Size</field>
-                            </group>
+                            <field name="books_id">Book ID</field>
+                            <field name="bookname">Book Name</field>
+                            <field name="price">Book Price</field>
+                            <field name="isbn">ISBN</field>
+                            <field name="category">ISBN</field>
                         </group>
-                    </sheet>
-                </form>
-            </field>
+                        <group>
+                            <field name="authors_id">Author ID</field>
+                            <field name="details">Book Details</field>
+                            <field name="authors_name">Authors Name</field>
+                            <field name="gener">Book Gener</field>
+                            <field name="publishername">Publisher Name</field>
+                        </group>
+                        <notebook>
+                            <page string="Borrow">
+                                <field name="books_id">Book ID</field>
+                                <field name="bookname">Book Name</field>
+                            </page>
+                            <page string="Return">
+                                <field name="books_id">Book ID</field>
+                                <field name="bookname">Book Name</field>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
         </record>
-
         <record id="books_tree_view" model="ir.ui.view">
             <field name="name">books.tree</field>
             <field name="model">books</field>
@@ -34,36 +44,22 @@
                 <tree string="Books Details">
                     <field name="bookname"/>
                     <field name="price"/>
-                    <field name="ISBN"/>
+                    <field name="isbn"/>
                 </tree>
             </field>
         </record>
-<!--
-        <record id="books_search_view" model="ir.ui.view">
-            <field name="bookname">books.search</field>
-            <field name="model">books</field>
-            <field name="arch" type="xml">
-                <search string="books">
-                    <group expand="1" string="Group By">
-                        <filter string="bookname" domain="[]"
-                                context="{'group_by':'bookname'}"/>
-                    </group>
-                </search>
-            </field>
-        </record>-->
-
-        <record id="books_act_window" model="ir.actions.act_window">
-            <field name="name">book</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">books</field>
-<!--            <field name="view_type">form</field>-->
-            <field name="view_mode">tree,form</field>
-          <!--  <field name="help" type="html">
-                <p class="oe_view_nocontent_create">
-                    There is no examples click here to add new ModelTitle.
-                </p>
-            </field>-->
-        </record>
-        <menuitem name="Books" id="books_menu" action="books_act_window"/>
-    </data>
+        <!--
+                <record id="books_search_view" model="ir.ui.view">
+                    <field name="bookname">books.search</field>
+                    <field name="model">books</field>
+                    <field name="arch" type="xml">
+                        <search string="books">
+                            <group expand="1" string="Group By">
+                                <filter string="bookname" domain="[]"
+                                        context="{'group_by':'bookname'}"/>
+                            </group>
+                        </search>
+                    </field>
+                </record>-->
+    </record>
 </odoo>

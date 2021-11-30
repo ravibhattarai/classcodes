@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="books_act_window" model="ir.actions.act_window">
+        <field name="name">book</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">books</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="books_action" model="ir.actions.act_window">
+        <field name="name">Library books</field>
+        <field name="res_model">books.library</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="books_author_action" model="ir.actions.act_window">
+        <field name="name">Book Author</field>
+        <field name="res_model">books.authors</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="category_action" model="ir.actions.act_window">
+        <field name="name">Book Category</field>
+        <field name="res_model">books.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="publisher_action" model="ir.actions.act_window">
+        <field name="name">Book Publisher</field>
+        <field name="res_model">books.publishers</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="book_issue_action" model="ir.actions.act_window">
+        <field name="name">Book Issue</field>
+        <field name="res_model">book.issue</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!--<menuitem id="test_menu_root" name="Test">
+                <menuitem id="test_first_level_menu" name="First Level">
+                <menuitem id="test_model_menu_action" action="test_model_action"/>
+            </menuitem>-->
+    <menuitem id="menu_books_root" name="Book">
+        <menuitem id="menu_books_root_author" name="Author" parent="menu_book_root" sequence="5">
+            <menuitem id="menu_books_root_author_action" action="books_author_action"/>
+        </menuitem>
+    </menuitem>
+    <!--    <menuitem id="menu_books_root_category" name="Category">
+            <menuitem id="menu_books_root_category" action="books_category_action"/>
+        </menuitem>-->
+    <menuitem id="menu_books_root_library" name="Library">
+        <menuitem id="menu_books_root_library_issue" name="Book Issue" parent="menu_book_root_library" sequence="6">
+            <menuitem id="menu_books_root_library_issue_action" action="books_issue_library_action"/>
+        </menuitem>
+    </menuitem>
+</odoo>

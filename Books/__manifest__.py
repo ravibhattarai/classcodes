@@ -11,10 +11,12 @@
     'description': 'Putting the Books Details',
     'installable': True,
     'depends':[
-        'analytic',
+        "web",
+        "base",
     ],
-    'data':[
-        'views/books.xml',
-        'security/ir.model.access.csv'
-    ],
+'data': [
+    'views/books.xml',
+    'views/books_menu.xml',
+    'security/ir.model.access.csv'
+],
 }
