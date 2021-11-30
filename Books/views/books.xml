@@ -1,41 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record>
-    <record id="books_view" model="ir.ui.view">
-        <field name="name">books.form</field>
-        <field name="model">books</field>
-        <field name="arch" type="xml">
-            <form string="Books Application">
-                <sheet>
-                    <group>
+    <data>
+
+        <record id="books_view" model="ir.ui.view">
+            <field name="name">books.form</field>
+            <field name="model">books</field>
+            <field name="arch" type="xml">
+                <form string="Books Application">
+                    <sheet>
                         <group>
-                            <field name="books_id">Book ID</field>
-                            <field name="bookname">Book Name</field>
-                            <field name="price">Book Price</field>
-                            <field name="isbn">ISBN</field>
-                            <field name="category">ISBN</field>
-                        </group>
-                        <group>
-                            <field name="authors_id">Author ID</field>
-                            <field name="details">Book Details</field>
-                            <field name="authors_name">Authors Name</field>
-                            <field name="gener">Book Gener</field>
-                            <field name="publishername">Publisher Name</field>
-                        </group>
-                        <notebook>
-                            <page string="Borrow">
+                            <group>
                                 <field name="books_id">Book ID</field>
                                 <field name="bookname">Book Name</field>
-                            </page>
-                            <page string="Return">
-                                <field name="books_id">Book ID</field>
-                                <field name="bookname">Book Name</field>
-                            </page>
-                        </notebook>
-                    </group>
-                </sheet>
-            </form>
-        </field>
+                                <field name="price">Book Price</field>
+                                <field name="isbn">ISBN</field>
+                                <field name="category">ISBN</field>
+                            </group>
+                            <group>
+                                <field name="authors_id">Author ID</field>
+                                <field name="details">Book Details</field>
+                                <field name="authors_name">Authors Name</field>
+                                <field name="gener">Book Gener</field>
+                                <field name="publishername">Publisher Name</field>
+                            </group>
+                            <notebook>
+                                <page string="Borrow">
+                                    <field name="books_id">Book ID</field>
+                                    <field name="bookname">Book Name</field>
+                                </page>
+                                <page string="Return">
+                                    <field name="books_id">Book ID</field>
+                                    <field name="bookname">Book Name</field>
+                                </page>
+                            </notebook>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
         </record>
         <record id="books_tree_view" model="ir.ui.view">
             <field name="name">books.tree</field>
@@ -61,5 +61,5 @@
                         </search>
                     </field>
                 </record>-->
-    </record>
+    </data>
 </odoo>
